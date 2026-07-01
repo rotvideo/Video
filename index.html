@@ -163,12 +163,14 @@
   .stat .big{font-family:'Fraunces',serif;font-size:2.2rem;font-weight:300;color:var(--ink);line-height:1}
   .stat .lbl{font-size:.74rem;color:var(--ink-dim);margin-top:10px;text-transform:uppercase;letter-spacing:.1em}
   .studio-frame{aspect-ratio:4/5;border:1px solid var(--line);position:relative;overflow:hidden;background:linear-gradient(160deg,#141517,#0c0d0e);display:flex;align-items:flex-end;padding:30px}
+  .studio-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(100%) contrast(1.05) brightness(.86)}
+  .studio-shade{position:absolute;inset:0;background:linear-gradient(to top,rgba(8,9,10,.9) 0%,rgba(8,9,10,.12) 46%,rgba(8,9,10,.45) 100%)}
   .studio-frame .corner{position:absolute;width:16px;height:16px;border:1px solid var(--ink-faint)}
   .studio-frame .corner.tl{top:18px;left:18px;border-right:none;border-bottom:none}
   .studio-frame .corner.tr{top:18px;right:18px;border-left:none;border-bottom:none}
   .studio-frame .corner.bl{bottom:18px;left:18px;border-right:none;border-top:none}
   .studio-frame .corner.br{bottom:18px;right:18px;border-left:none;border-top:none}
-  .studio-frame .fcap{font-size:.72rem;color:var(--ink-dim)}
+  .studio-frame .fcap{font-size:.72rem;color:var(--ink-dim);position:relative;z-index:3}
   .studio-frame .fcap b{color:var(--ink);font-weight:400;display:block;font-family:'Fraunces',serif;font-size:1.05rem;margin-top:6px;letter-spacing:-.01em}
 
   /* ---------- CONTACT ---------- */
@@ -366,14 +368,16 @@
         <p class="lead">Ein kleines Studio, das grosse Filme macht.</p>
         <p>Vom ersten Gespräch bis zum fertigen Film arbeiten Sie mit denselben Leuten. Kurze Wege, klare Sprache – und ein Resultat, das Sie gerne zeigen.</p>
         <div class="stats">
-          <div class="stat"><div class="big mono">4+</div><div class="lbl">Jahre</div></div>
-          <div class="stat"><div class="big mono">20+</div><div class="lbl">Produktionen</div></div>
+          <div class="stat"><div class="big mono">12+</div><div class="lbl">Jahre</div></div>
+          <div class="stat"><div class="big mono">240</div><div class="lbl">Produktionen</div></div>
           <div class="stat"><div class="big mono">4K</div><div class="lbl">Cinema-Workflow</div></div>
         </div>
       </div>
-      <div class="studio-frame reveal" aria-hidden="true">
-        <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
-        <span class="fcap mono">SCENE 04 · OBERDORF SO<b>Where the films get made.</b></span>
+      <div class="studio-frame reveal">
+        <img class="studio-img" src="studio.jpg" alt="Am Set – das Team von Röthlisberger Videoproductions">
+        <div class="studio-shade" aria-hidden="true"></div>
+        <span class="corner tl" aria-hidden="true"></span><span class="corner tr" aria-hidden="true"></span><span class="corner bl" aria-hidden="true"></span><span class="corner br" aria-hidden="true"></span>
+        <span class="fcap mono">SCENE 04 · DAS TEAM<b>Die zwei hinter den Filmen.</b></span>
       </div>
     </div>
   </div>
@@ -389,7 +393,6 @@
       <a class="btn btn-primary" href="mailto:wyss.matthias@gmx.ch">Projekt anfragen</a>
       <a class="btn btn-ghost" href="#work">Showreel ansehen</a>
     </div>
-    
     <p class="mailto">Oder direkt: <a href="mailto:wyss.matthias@gmx.ch">wyss.matthias@gmx.ch</a> · <a href="mailto:nik.ror@bluewin.ch">nik.ror@bluewin.ch</a></p>
   </div>
 </section>

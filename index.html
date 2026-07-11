@@ -5,6 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Röthlisberger Videoproductions — Werbe- & Corporate-Film</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2048%2048%27%3E%3Crect%20x%3D%272%27%20y%3D%272%27%20width%3D%2744%27%20height%3D%2744%27%20rx%3D%2710%27%20fill%3D%27%230a0b0c%27%20stroke%3D%27%23ecebe8%27%20stroke-width%3D%272%27/%3E%3Ctext%20x%3D%2724%27%20y%3D%2734%27%20text-anchor%3D%27middle%27%20font-family%3D%27Georgia%2C%22Times%20New%20Roman%22%2Cserif%27%20font-size%3D%2727%27%20fill%3D%27%23ecebe8%27%3ER%3C/text%3E%3C/svg%3E">
+<!-- Vercel Web Analytics -->
+<script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};</script>
+<script defer src="/_vercel/insights/script.js"></script>
+<!-- Vercel Speed Insights -->
+<script>window.si=window.si||function(){(window.siq=window.siq||[]).push(arguments)};</script>
+<script defer src="/_vercel/speed-insights/script.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300&family=Inter:wght@400;500&family=Space+Mono:wght@400&display=swap" rel="stylesheet">
@@ -419,7 +425,7 @@
       <div class="foot-cols">
         <div class="foot-col"><h5>Studio</h5><a href="#work">Arbeiten</a><a href="#leistungen">Leistungen</a><a href="#prozess">Prozess</a><a href="#studio">Über uns</a></div>
         <div class="foot-col"><h5>Kontakt</h5><a href="mailto:info@rotvideo.ch">info@rotvideo.ch</a><a href="tel:+41798928286">+41 79 892 82 86</a><a href="#kontakt">Anfrage senden</a></div>
-        <div class="foot-col"><h5>Social</h5><a href="https://www.instagram.com/r_videoproductions?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener">Instagram</a><a href="https://www.youtube.com/@R%C3%B6thlisbergerVideoproduction" target="_blank" rel="noopener">YouTube</a></div>
+        <div class="foot-col"><h5>Social</h5><a href="https://www.instagram.com/r_videoproduction/" target="_blank" rel="noopener">Instagram</a><a href="https://www.youtube.com/@R%C3%B6thlisbergerVideoproduction" target="_blank" rel="noopener">YouTube</a></div>
       </div>
     </div>
     <div class="foot-base">
@@ -530,22 +536,3 @@
 </script>
 </body>
 </html>
-import { SpeedInsights } from '@vercel/speed-insights/next';
- 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  return (
-    <html lang="en">
-      <head>
-        <title>Next.js</title>
-      </head>
-      <body>
-        {children}
-        <SpeedInsights />
-      </body>
-    </html>
-  );
-}

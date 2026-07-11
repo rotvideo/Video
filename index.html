@@ -208,6 +208,11 @@
   .vmodal-frame{position:relative;aspect-ratio:16/9;width:100%;background:#000;border:1px solid var(--line);overflow:hidden}
   .vmodal-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
   .vmodal-msg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--ink-faint);font-family:'Fraunces',serif;font-style:italic;font-size:1.05rem}
+  .vmodal-tabs{display:none;gap:8px;margin-bottom:12px}
+  .vmodal-tabs.show{display:flex}
+  .vmodal-tab{padding:8px 16px;border:1px solid var(--line);border-radius:1px;background:transparent;color:var(--ink-dim);font-size:.76rem;letter-spacing:.04em;cursor:pointer;transition:.25s var(--ease);font-family:'Inter',sans-serif}
+  .vmodal-tab:hover{color:var(--ink);border-color:var(--ink-dim)}
+  .vmodal-tab.active{background:var(--ink);color:var(--bg);border-color:var(--ink)}
   @media(prefers-reduced-motion:reduce){.vmodal,.vmodal-inner{transition:opacity .2s linear}}
 
   /* ---------- RESPONSIVE ---------- */
@@ -296,8 +301,8 @@
 <!-- CLIENT STRIP -->
 <div class="strip" aria-label="Kundenauswahl">
   <div class="marquee" aria-hidden="true">
-    <span>Sportzentrum Zuchwil</span><span>Lupo &amp; Zuccarello Architekten</span><span>Krebsliga beider Basel</span><span>Dentalspezialisten Egerkingen</span><span>SRSO Artistic Swimming</span><span>Sportzentrum Zuchwil</span><span>Lupo &amp; Zuccarello Architekten</span><span>Krebsliga beider Basel</span><span>Dentalspezialisten Egerkingen</span><span>SRSO Artistic Swimming</span>
-    <span>Sportzentrum Zuchwil</span><span>Lupo &amp; Zuccarello Architekten</span><span>Krebsliga beider Basel</span><span>Dentalspezialisten Egerkingen</span><span>SRSO Artistic Swimming</span><span>Sportzentrum Zuchwil</span><span>Lupo &amp; Zuccarello Architekten</span><span>Krebsliga beider Basel</span><span>Dentalspezialisten Egerkingen</span><span>SRSO Artistic Swimming</span>
+    <span>Sportzentrum Zuchwil</span><span>Lupo &amp; Zuccarello Architekten</span><span>Krebsliga beider Basel</span><span>Dentalspecialist Dr. Sleiter AG</span><span>SRSO Artistic Swimming</span><span>Sportzentrum Zuchwil</span><span>Lupo &amp; Zuccarello Architekten</span><span>Krebsliga beider Basel</span><span>Dentalspecialist Dr. Sleiter AG</span><span>SRSO Artistic Swimming</span>
+    <span>Sportzentrum Zuchwil</span><span>Lupo &amp; Zuccarello Architekten</span><span>Krebsliga beider Basel</span><span>Dentalspecialist Dr. Sleiter AG</span><span>SRSO Artistic Swimming</span><span>Sportzentrum Zuchwil</span><span>Lupo &amp; Zuccarello Architekten</span><span>Krebsliga beider Basel</span><span>Dentalspecialist Dr. Sleiter AG</span><span>SRSO Artistic Swimming</span>
   </div>
 </div>
 
@@ -317,9 +322,13 @@
       <a class="clip reveal" href="#" data-video="https://www.youtube.com/embed/Avyj_dmTHeM" data-title="Sportzentrum Zuchwil — Werbefilm & Recruitingfilm"><span class="idx mono">01</span><span class="meta"><span class="title">Sportzentrum Zuchwil</span><span class="tag">Werbefilm &amp; Recruitingfilm</span></span><span class="dur mono">SPORT &amp; FREIZEIT</span><span class="arrow">▶</span></a>
       <a class="clip reveal" href="#" data-video="https://www.youtube.com/embed/47pYF237b7M" data-title="Lupo & Zuccarello Architekten — Imagefilm"><span class="idx mono">02</span><span class="meta"><span class="title">Lupo &amp; Zuccarello Architekten</span><span class="tag">Imagefilm · Architektur</span></span><span class="dur mono">ARCHITEKTUR</span><span class="arrow">▶</span></a>
       <a class="clip reveal" href="#" data-video="https://www.youtube.com/embed/Ii1HDLkCDK8" data-title="Krebsliga beider Basel — Projektfilme"><span class="idx mono">03</span><span class="meta"><span class="title">Krebsliga beider Basel</span><span class="tag">Projektfilme · Aufklärung &amp; Begleitung</span></span><span class="dur mono">NON-PROFIT</span><span class="arrow">▶</span></a>
-      <a class="clip reveal" href="#" data-video="https://www.youtube.com/embed/aND4ikU_FZk" data-title="Dentalspezialisten Egerkingen — Praxisvideo"><span class="idx mono">04</span><span class="meta"><span class="title">Dentalspezialisten Egerkingen</span><span class="tag">Praxisvideo · Dr. Sleiter</span></span><span class="dur mono">MEDIZIN</span><span class="arrow">▶</span></a>
-      <a class="clip reveal" href="#" data-video="https://www.youtube.com/embed/VdsTe-JeuvY" data-title="Dentalspezialisten Egerkingen — All-on-4 Methode"><span class="idx mono">05</span><span class="meta"><span class="title">Dentalspezialisten Egerkingen</span><span class="tag">All-on-4-Methode · Dr. Sleiter</span></span><span class="dur mono">MEDIZIN</span><span class="arrow">▶</span></a>
-      <a class="clip reveal" href="#" data-video="https://www.youtube.com/embed/qCzlZXRlTjk" data-title="SRSO Artistic Swimming"><span class="idx mono">06</span><span class="meta"><span class="title">SRSO Artistic Swimming</span><span class="tag">Projektfilm · Sport</span></span><span class="dur mono">SPORT</span><span class="arrow">▶</span></a>
+      <a class="clip reveal" href="#"
+         data-video="https://www.youtube.com/embed/aND4ikU_FZk" data-title="Dentalspecialist Dr. Sleiter AG — Praxisvideo"
+         data-video2="https://www.youtube.com/embed/VdsTe-JeuvY" data-title2="Dentalspecialist Dr. Sleiter AG — All-on-4-Methode"
+         data-label1="Praxisvideo" data-label2="All-on-4-Methode">
+        <span class="idx mono">04</span><span class="meta"><span class="title">Dentalspecialist Dr. Sleiter AG</span><span class="tag">Praxisvideo &amp; All-on-4-Methode</span></span><span class="dur mono">MEDIZIN</span><span class="arrow">▶</span>
+      </a>
+      <a class="clip reveal" href="#" data-video="https://www.youtube.com/embed/qCzlZXRlTjk" data-title="SRSO Artistic Swimming"><span class="idx mono">05</span><span class="meta"><span class="title">SRSO Artistic Swimming</span><span class="tag">Projektfilm · Sport</span></span><span class="dur mono">SPORT</span><span class="arrow">▶</span></a>
     </div>
   </div>
 </section>
@@ -428,6 +437,7 @@
       <span class="vmodal-title mono" id="vmodalTitle"></span>
       <button class="vmodal-close" type="button" aria-label="Schliessen" data-close>✕</button>
     </div>
+    <div class="vmodal-tabs" id="vmodalTabs"></div>
     <div class="vmodal-frame">
       <div class="vmodal-msg" id="vmodalMsg">Video folgt in Kürze.</div>
       <iframe id="vmodalIframe" title="Video" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="display:none"></iframe>
@@ -452,11 +462,10 @@
   const vframe=document.getElementById('vmodalIframe');
   const vtitle=document.getElementById('vmodalTitle');
   const vmsg=document.getElementById('vmodalMsg');
+  const vtabs=document.getElementById('vmodalTabs');
   let vLastFocus=null;
 
-  function openVideo(url,title){
-    vLastFocus=document.activeElement;
-    vtitle.textContent=title||'';
+  function setVideo(url){
     if(url){
       vframe.src=url+(url.includes('?')?'&':'?')+'autoplay=1';
       vframe.style.display='';
@@ -466,6 +475,23 @@
       vframe.style.display='none';
       vmsg.style.display='';
     }
+  }
+
+  function openVideo(url,title,url2,label1,label2){
+    vLastFocus=document.activeElement;
+    vtitle.textContent=title||'';
+    vtabs.innerHTML='';
+    if(url2){
+      vtabs.classList.add('show');
+      const b1=document.createElement('button'); b1.className='vmodal-tab active'; b1.type='button'; b1.textContent=label1||'Video 1';
+      const b2=document.createElement('button'); b2.className='vmodal-tab'; b2.type='button'; b2.textContent=label2||'Video 2';
+      b1.addEventListener('click',()=>{setVideo(url);b1.classList.add('active');b2.classList.remove('active');});
+      b2.addEventListener('click',()=>{setVideo(url2);b2.classList.add('active');b1.classList.remove('active');});
+      vtabs.append(b1,b2);
+    }else{
+      vtabs.classList.remove('show');
+    }
+    setVideo(url||'');
     vmodal.classList.add('open');
     vmodal.setAttribute('aria-hidden','false');
     document.body.style.overflow='hidden';
@@ -483,7 +509,7 @@
     c.addEventListener('click',e=>{
       e.preventDefault();
       const t=c.dataset.title||(c.querySelector('.title')?c.querySelector('.title').textContent:'');
-      openVideo(c.dataset.video||'',t);
+      openVideo(c.dataset.video||'',t,c.dataset.video2||'',c.dataset.label1||'',c.dataset.label2||'');
     });
   });
   vmodal.querySelectorAll('[data-close]').forEach(el=>el.addEventListener('click',closeVideo));

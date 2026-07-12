@@ -66,7 +66,7 @@
   nav a:hover{color:var(--ink)}
   .nav-cta{border:1px solid var(--line);border-radius:1px;padding:9px 18px;color:var(--ink);transition:.3s var(--ease)}
   .nav-cta:hover{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-  .menu-btn{display:none;background:none;border:none;color:var(--ink);font-size:1.2rem;cursor:pointer}
+  .menu-btn{display:none;background:none;border:none;color:var(--ink);font-size:1.2rem;cursor:pointer;width:38px;height:38px;flex:none;position:relative;z-index:210}
 
   /* ---------- HERO ---------- */
   .hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;background:var(--bg)}
@@ -223,7 +223,27 @@
 
   /* ---------- RESPONSIVE ---------- */
   @media(max-width:900px){
-    nav ul{display:none}.menu-btn{display:block}
+    nav ul{
+      display:flex;position:fixed;inset:0 0 auto 0;top:0;flex-direction:column;align-items:stretch;gap:0;
+      background:rgba(10,11,12,.98);backdrop-filter:blur(14px);
+      padding:104px 28px 32px;
+      transform:translateY(-100%);opacity:0;visibility:hidden;
+      transition:transform .4s var(--ease),opacity .3s var(--ease),visibility .4s;
+      z-index:200;
+    }
+    nav ul.open{transform:translateY(0);opacity:1;visibility:visible}
+    nav ul li{border-bottom:1px solid var(--line-soft)}
+    nav ul a{display:block;padding:20px 2px;font-size:1.05rem}
+    nav ul .nav-cta{border:none;padding:20px 2px;text-align:left}
+    .menu-btn{display:block}
+    .menu-btn .bars{display:block;position:relative;width:20px;height:14px;margin:0 auto}
+    .menu-btn .bars span{position:absolute;left:0;right:0;height:1.4px;background:currentColor;transition:transform .3s var(--ease),opacity .3s var(--ease),top .3s var(--ease)}
+    .menu-btn .bars span:nth-child(1){top:0}
+    .menu-btn .bars span:nth-child(2){top:6px}
+    .menu-btn .bars span:nth-child(3){top:12px}
+    .menu-btn.open .bars span:nth-child(1){top:6px;transform:rotate(45deg)}
+    .menu-btn.open .bars span:nth-child(2){opacity:0}
+    .menu-btn.open .bars span:nth-child(3){top:6px;transform:rotate(-45deg)}
     .svc-grid{grid-template-columns:1fr 1fr}
     .proc{grid-template-columns:1fr 1fr;border:1px solid var(--line)}
     .step{border-bottom:1px solid var(--line-soft)}
@@ -262,7 +282,7 @@
     <span><b>RÖTHLISBERGER</b> <span class="sub">Videoproductions</span></span>
   </a>
   <nav>
-    <ul>
+    <ul id="navList">
       <li><a href="#work">Arbeiten</a></li>
       <li><a href="#leistungen">Leistungen</a></li>
       <li><a href="#prozess">Prozess</a></li>
@@ -270,7 +290,9 @@
       <li><a class="nav-cta" href="#kontakt">Anfragen</a></li>
     </ul>
   </nav>
-  <button class="menu-btn" aria-label="Menü" onclick="document.querySelector('nav ul').scrollIntoView()">☰</button>
+  <button class="menu-btn" id="menuBtn" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navList">
+    <span class="bars" aria-hidden="true"><span></span><span></span><span></span></span>
+  </button>
 </header>
 
 <!-- HERO -->
@@ -454,6 +476,21 @@
 <script>
   const nav=document.getElementById('nav');
   addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40),{passive:true});
+
+  /* ---- Mobile-Menü ---- */
+  const menuBtn=document.getElementById('menuBtn');
+  const navList=document.getElementById('navList');
+  function setMenu(open){
+    menuBtn.classList.toggle('open',open);
+    navList.classList.toggle('open',open);
+    menuBtn.setAttribute('aria-expanded',open?'true':'false');
+    menuBtn.setAttribute('aria-label',open?'Menü schliessen':'Menü öffnen');
+    document.body.style.overflow=open?'hidden':'';
+  }
+  menuBtn.addEventListener('click',()=>setMenu(!navList.classList.contains('open')));
+  navList.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
+  addEventListener('keydown',e=>{if(e.key==='Escape')setMenu(false);});
+  matchMedia('(min-width:901px)').addEventListener('change',e=>{if(e.matches)setMenu(false);});
 
   const io=new IntersectionObserver((es)=>{
     es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});

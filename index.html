@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="de-CH">
 <head>
+<!-- Google tag (gtag.js) — wird erst nach Cookie-Zustimmung geladen, siehe Consent-Banner am Seitenende -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Röthlisberger Videoproductions — Werbe- & Corporate-Film</title>
@@ -107,6 +108,30 @@
   .btn-ghost{border-color:var(--line);color:var(--ink)}
   .btn-ghost:hover{border-color:var(--ink-dim);background:rgba(255,255,255,.025)}
   .btn .play{font-size:.66rem;opacity:.8}
+
+  /* ---------- COOKIE BANNER ---------- */
+  .cookie-banner{
+    position:fixed;left:0;right:0;bottom:0;z-index:200;
+    background:rgba(14,15,17,.92);backdrop-filter:blur(14px) saturate(120%);
+    border-top:1px solid var(--line-soft);
+    padding:22px 40px;transform:translateY(110%);opacity:0;
+    transition:transform .5s var(--ease),opacity .5s var(--ease);
+  }
+  .cookie-banner.show{transform:translateY(0);opacity:1}
+  .cookie-inner{max-width:var(--max);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap}
+  .cookie-inner p{font-size:.86rem;color:var(--ink-dim);max-width:62ch;line-height:1.6;margin:0}
+  .cookie-inner a{color:var(--ink);border-bottom:1px solid var(--line);transition:border-color .25s}
+  .cookie-inner a:hover{border-color:var(--ink)}
+  .cookie-actions{display:flex;gap:12px;flex:none}
+  .cookie-actions button{font-family:'Inter',system-ui,sans-serif;background:none;font:inherit}
+  .cookie-actions .btn{padding:11px 22px;font-size:.82rem}
+  #cookieSettingsLink{cursor:pointer}
+  @media(max-width:640px){
+    .cookie-banner{padding:20px 22px}
+    .cookie-inner{gap:18px}
+    .cookie-actions{width:100%}
+    .cookie-actions .btn{flex:1;justify-content:center}
+  }
   .scrollcue{position:absolute;bottom:60px;left:40px;font-size:.66rem;color:var(--ink-faint);letter-spacing:.22em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:10px;z-index:2;opacity:0;animation:rise 1s var(--ease) 1.4s forwards}
   .scrollcue .ln{width:1px;height:46px;background:var(--line);position:relative;overflow:hidden}
   .scrollcue .ln::after{content:"";position:absolute;top:0;left:0;width:100%;height:40%;background:var(--ink-dim);animation:slidedown 2.4s var(--ease) infinite}
@@ -452,7 +477,7 @@
       </div>
     </div>
     <div class="foot-base">
-      <span>© 2026 Röthlisberger Videoproductions · Weissensteinstrasse 105, 4515 Oberdorf SO · <a href="/datenschutz.html">Datenschutz</a></span>
+      <span>© 2026 Röthlisberger Videoproductions · Weissensteinstrasse 105, 4515 Oberdorf SO · <a href="/datenschutz.html">Datenschutz</a> · <a href="#" id="cookieSettingsLink">Cookie-Einstellungen</a></span>
       <span class="mono">Made in Switzerland</span>
     </div>
   </div>
@@ -571,6 +596,53 @@
     ['click','touchstart','scroll','keydown'].forEach(ev=>
       addEventListener(ev,tryPlay,{once:true,passive:true}));
   }
+</script>
+
+<!-- COOKIE-BANNER -->
+<div class="cookie-banner" id="cookieBanner" role="dialog" aria-live="polite" aria-label="Cookie-Einstellungen">
+  <div class="cookie-inner">
+    <p>Wir nutzen ein Google-Tag, um zu messen, ob Besuche über unsere Google-Anzeigen zustande kommen. Dabei werden Cookies gesetzt. Unsere Vercel-Analytics zur reinen Reichweitenmessung ist davon unabhängig und cookielos. Mehr dazu in der <a href="/datenschutz.html">Datenschutzerklärung</a>.</p>
+    <div class="cookie-actions">
+      <button id="cookieDecline" class="btn btn-ghost" type="button">Nur notwendige</button>
+      <button id="cookieAccept" class="btn btn-primary" type="button">Akzeptieren</button>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  var CONSENT_KEY='rotvideo-consent', GADS_ID='AW-17185410340';
+  var banner=document.getElementById('cookieBanner');
+
+  function loadGtag(){
+    if(window.__gtagLoaded) return;
+    window.__gtagLoaded=true;
+    window.dataLayer=window.dataLayer||[];
+    window.gtag=function(){dataLayer.push(arguments);};
+    gtag('js', new Date());
+    gtag('config', GADS_ID);
+    var s=document.createElement('script');
+    s.async=true;
+    s.src='https://www.googletagmanager.com/gtag/js?id='+GADS_ID;
+    document.head.appendChild(s);
+  }
+  function showBanner(){ banner.classList.add('show'); }
+  function hideBanner(){ banner.classList.remove('show'); }
+  function setConsent(value){
+    try{ localStorage.setItem(CONSENT_KEY,value); }catch(e){}
+    hideBanner();
+    if(value==='granted') loadGtag();
+  }
+
+  var stored;
+  try{ stored=localStorage.getItem(CONSENT_KEY); }catch(e){ stored=null; }
+  if(stored==='granted'){ loadGtag(); }
+  else if(stored!=='denied'){ setTimeout(showBanner,600); }
+
+  document.getElementById('cookieAccept').addEventListener('click',function(){ setConsent('granted'); });
+  document.getElementById('cookieDecline').addEventListener('click',function(){ setConsent('denied'); });
+  var settingsLink=document.getElementById('cookieSettingsLink');
+  if(settingsLink) settingsLink.addEventListener('click',function(e){ e.preventDefault(); showBanner(); });
+})();
 </script>
 </body>
 </html>

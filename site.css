@@ -96,9 +96,13 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer;let
 .head--over{border-top:1px solid var(--line)}
 .head h2,.row h2{font-size:15px;font-weight:600}
 .sec{margin-top:var(--gap)}
+#prozess + .sec{margin-top:clamp(20px,2.5vw,36px)}
 
 /* ---------- Filmwand ---------- */
-.wall{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(560px,100%),1fr));gap:0 2px}
+.wall{display:grid;grid-template-columns:1fr;gap:0 2px}
+/* Laptop und Desktop: Filme als gleichmässiges Raster über die ganze Breite */
+@media (min-width:900px){.wall{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:2000px){.wall{grid-template-columns:repeat(4,1fr)}}
 .film{display:flex;flex-direction:column}
 .film--wide{grid-column:1 / -1}
 .film-img{display:block;overflow:hidden;background:#101010;aspect-ratio:16 / 9}

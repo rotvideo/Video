@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="de-CH">
 <head>
-<!-- Google tag (gtag.js) — wird erst nach Cookie-Zustimmung geladen, siehe Consent-Banner am Seitenende -->
+<!-- Google tag (gtag.js) — wird erst nach Cookie-Zustimmung geladen, siehe site.js -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Röthlisberger Videoproductions — Werbe- & Corporate-Film</title>
+<title>Röthlisberger Videoproductions — Werbe- &amp; Corporate-Film</title>
+<meta name="description" content="Filmproduktion aus Oberdorf SO: Werbefilm, Imagefilm, Recruitingfilm und Social Content. Von der Idee bis zum fertigen Film – alles aus einer Hand.">
+<link rel="alternate" hreflang="de-CH" href="https://rotvideo.ch/">
+<link rel="alternate" hreflang="en" href="https://rotvideo.ch/en/">
+<link rel="alternate" hreflang="x-default" href="https://rotvideo.ch/">
 <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2048%2048%27%3E%3Crect%20x%3D%272%27%20y%3D%272%27%20width%3D%2744%27%20height%3D%2744%27%20rx%3D%2710%27%20fill%3D%27%230a0b0c%27%20stroke%3D%27%23ecebe8%27%20stroke-width%3D%272%27/%3E%3Ctext%20x%3D%2724%27%20y%3D%2734%27%20text-anchor%3D%27middle%27%20font-family%3D%27Georgia%2C%22Times%20New%20Roman%22%2Cserif%27%20font-size%3D%2727%27%20fill%3D%27%23ecebe8%27%3ER%3C/text%3E%3C/svg%3E">
+<script>document.documentElement.className+=' js';</script>
 <!-- Vercel Web Analytics -->
 <script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};</script>
 <script defer src="/_vercel/insights/script.js"></script>
@@ -15,480 +19,172 @@
 <script defer src="/_vercel/speed-insights/script.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300&family=Inter:wght@400;500&family=Space+Mono:wght@400&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --bg:#0a0b0c;
-    --bg-2:#0e0f11;
-    --surface:#141517;
-    --line:#222428;
-    --line-soft:#1a1c1f;
-    --ink:#ecebe8;
-    --ink-dim:#969799;
-    --ink-faint:#5c5e62;
-    --accent:#ecebe8;
-    --max:1180px;
-    --ease:cubic-bezier(.22,.61,.36,1);
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{
-    background:var(--bg);color:var(--ink);
-    font-family:'Inter',system-ui,sans-serif;line-height:1.65;
-    -webkit-font-smoothing:antialiased;overflow-x:hidden;
-  }
-  .grain{
-    position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.022;
-    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  }
-  .mono{font-family:'Space Mono',monospace;letter-spacing:.04em}
-  .wrap{max-width:var(--max);margin:0 auto;padding:0 40px}
-  a{color:inherit;text-decoration:none}
-
-  /* ---------- NAV ---------- */
-  header.nav{
-    position:fixed;top:0;left:0;right:0;z-index:100;
-    display:flex;align-items:center;justify-content:space-between;
-    padding:26px 40px;transition:all .45s var(--ease);
-    border-bottom:1px solid transparent;
-  }
-  header.nav.scrolled{
-    background:rgba(10,11,12,.78);backdrop-filter:blur(14px) saturate(120%);
-    padding:16px 40px;border-bottom:1px solid var(--line-soft);
-  }
-  .brand{display:flex;align-items:center;gap:12px;font-size:.92rem;letter-spacing:.02em}
-  .logo-mark{width:27px;height:27px;color:var(--ink);flex:none;transition:transform .4s var(--ease)}
-  .brand:hover .logo-mark{transform:rotate(-4deg) scale(1.05)}
-  .brand .dot{width:7px;height:7px;border-radius:50%;background:var(--ink-dim);flex:none;animation:rec 2.6s steps(1) infinite}
-  @keyframes rec{0%,55%{opacity:.9}56%,100%{opacity:.25}}
-  .brand b{font-weight:500}
-  .brand .sub{color:var(--ink-faint);font-weight:400}
-  nav ul{display:flex;gap:34px;list-style:none;align-items:center}
-  nav a{font-size:.82rem;color:var(--ink-dim);letter-spacing:.01em;transition:color .25s}
-  nav a:hover{color:var(--ink)}
-  .nav-cta{border:1px solid var(--line);border-radius:1px;padding:9px 18px;color:var(--ink);transition:.3s var(--ease)}
-  .nav-cta:hover{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-  .menu-btn{display:none;background:none;border:none;color:var(--ink);font-size:1.2rem;cursor:pointer;width:38px;height:38px;flex:none;position:relative;z-index:210}
-
-  /* ---------- HERO ---------- */
-  .hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;background:var(--bg)}
-  .hero-video{position:absolute;inset:0;overflow:hidden;z-index:0;pointer-events:none;background:#000}
-  .hero-video video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(100%) contrast(1.06) brightness(.66)}
-  .hero-video::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,11,12,.5) 0%,rgba(10,11,12,.68) 62%,var(--bg) 100%)}
-  .bar{position:absolute;left:0;right:0;height:40px;background:#050607;z-index:5}
-  .bar.top{top:0;transform:translateY(-100%);animation:barIn 1.1s var(--ease) .15s forwards}
-  .bar.bot{bottom:0;transform:translateY(100%);animation:barIn 1.1s var(--ease) .15s forwards}
-  @keyframes barIn{to{transform:translateY(0)}}
-
-  .hero-grid{width:100%;max-width:var(--max);margin:0 auto;padding:0 40px;display:flex;flex-direction:column;gap:38px;position:relative;z-index:2}
-  .hero-eyebrow{
-    display:flex;align-items:center;gap:16px;flex-wrap:wrap;
-    font-size:.72rem;color:var(--ink-dim);text-transform:uppercase;letter-spacing:.24em;
-    opacity:0;animation:rise .9s var(--ease) .5s forwards;
-  }
-  .hero-eyebrow .div{width:30px;height:1px;background:var(--line)}
-  .hero-eyebrow .tc{color:var(--ink-faint)}
-  h1.hero-title{
-    font-family:'Fraunces',serif;font-weight:300;
-    font-size:clamp(2.7rem,7.6vw,6.4rem);line-height:1.0;letter-spacing:-.022em;max-width:16ch;
-  }
-  h1.hero-title .it{font-style:italic;font-weight:300;color:var(--ink-dim)}
-  h1.hero-title .line{display:block;overflow:hidden}
-  h1.hero-title .line>span{display:block;transform:translateY(110%);animation:rise 1.05s var(--ease) forwards}
-  h1.hero-title .line:nth-child(1)>span{animation-delay:.55s}
-  h1.hero-title .line:nth-child(2)>span{animation-delay:.67s}
-  h1.hero-title .line:nth-child(3)>span{animation-delay:.79s}
-  @keyframes rise{to{transform:translateY(0);opacity:1}}
-  .hero-bottom{display:flex;justify-content:space-between;align-items:flex-end;gap:48px;flex-wrap:wrap;opacity:0;animation:rise .9s var(--ease) 1s forwards}
-  .hero-sub{max-width:44ch;color:var(--ink-dim);font-size:1.02rem}
-  .hero-actions{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
-  .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 26px;border-radius:1px;font-size:.88rem;font-weight:500;transition:.3s var(--ease);cursor:pointer;border:1px solid transparent}
-  .btn-primary{background:var(--ink);color:var(--bg)}
-  .btn-primary:hover{transform:translateY(-2px);background:#fff}
-  .btn-ghost{border-color:var(--line);color:var(--ink)}
-  .btn-ghost:hover{border-color:var(--ink-dim);background:rgba(255,255,255,.025)}
-  .btn .play{font-size:.66rem;opacity:.8}
-
-  /* ---------- COOKIE BANNER ---------- */
-  .cookie-banner{
-    position:fixed;left:0;right:0;bottom:0;z-index:200;
-    background:rgba(14,15,17,.92);backdrop-filter:blur(14px) saturate(120%);
-    border-top:1px solid var(--line-soft);
-    padding:22px 40px;transform:translateY(110%);opacity:0;
-    transition:transform .5s var(--ease),opacity .5s var(--ease);
-  }
-  .cookie-banner.show{transform:translateY(0);opacity:1}
-  .cookie-inner{max-width:var(--max);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap}
-  .cookie-inner p{font-size:.86rem;color:var(--ink-dim);max-width:62ch;line-height:1.6;margin:0}
-  .cookie-inner a{color:var(--ink);border-bottom:1px solid var(--line);transition:border-color .25s}
-  .cookie-inner a:hover{border-color:var(--ink)}
-  .cookie-actions{display:flex;gap:12px;flex:none}
-  .cookie-actions button{appearance:none;-webkit-appearance:none;font-family:'Inter',system-ui,sans-serif;font:inherit}
-  .cookie-actions .btn{padding:11px 22px;font-size:.82rem}
-  #cookieSettingsLink{cursor:pointer}
-  @media(max-width:640px){
-    .cookie-banner{padding:20px 22px}
-    .cookie-inner{gap:18px}
-    .cookie-actions{width:100%}
-    .cookie-actions .btn{flex:1;justify-content:center}
-  }
-  .scrollcue{position:absolute;bottom:60px;left:40px;font-size:.66rem;color:var(--ink-faint);letter-spacing:.22em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:10px;z-index:2;opacity:0;animation:rise 1s var(--ease) 1.4s forwards}
-  .scrollcue .ln{width:1px;height:46px;background:var(--line);position:relative;overflow:hidden}
-  .scrollcue .ln::after{content:"";position:absolute;top:0;left:0;width:100%;height:40%;background:var(--ink-dim);animation:slidedown 2.4s var(--ease) infinite}
-  @keyframes slidedown{0%{transform:translateY(-100%)}100%{transform:translateY(280%)}}
-
-  /* ---------- SECTION SHELL ---------- */
-  section{padding:150px 0;position:relative}
-  .sec-head{display:grid;grid-template-columns:auto 1fr;gap:14px 40px;align-items:end;margin-bottom:72px}
-  .sec-tc{font-size:.74rem;color:var(--ink-faint);grid-column:1;letter-spacing:.08em}
-  .sec-title{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(1.8rem,3.8vw,2.9rem);letter-spacing:-.018em;line-height:1.04;grid-column:1}
-  .sec-lead{color:var(--ink-dim);max-width:46ch;font-size:.98rem;grid-column:2;grid-row:1/3;align-self:end;justify-self:end}
-
-  .reveal{opacity:0;transform:translateY(24px);transition:opacity .85s var(--ease),transform .85s var(--ease)}
-  .reveal.in{opacity:1;transform:none}
-
-  /* ---------- CLIENT STRIP ---------- */
-  .strip{border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft);padding:30px 0;overflow:hidden}
-  .marquee{display:flex;gap:72px;white-space:nowrap;width:max-content;animation:scroll 40s linear infinite}
-  .marquee span{font-size:.82rem;color:var(--ink-faint);text-transform:uppercase;letter-spacing:.18em}
-  @keyframes scroll{to{transform:translateX(-50%)}}
-
-  /* ---------- WORK / REEL ---------- */
-  .reel{border-top:1px solid var(--line)}
-  .clip{display:grid;grid-template-columns:50px 1fr auto auto;gap:28px;align-items:center;padding:32px 8px;border-bottom:1px solid var(--line);transition:padding-left .4s var(--ease),background .4s var(--ease);cursor:pointer}
-  .clip:hover{background:var(--surface);padding-left:24px}
-  .clip .idx{font-size:.76rem;color:var(--ink-faint)}
-  .clip .meta{display:flex;flex-direction:column;gap:6px}
-  .clip .title{font-family:'Fraunces',serif;font-size:clamp(1.3rem,2.6vw,1.9rem);font-weight:400;letter-spacing:-.01em;transition:color .3s}
-  .clip:hover .title{color:#fff}
-  .clip .tag{font-size:.74rem;color:var(--ink-dim);text-transform:uppercase;letter-spacing:.14em}
-  .clip .dur{font-size:.8rem;color:var(--ink-faint)}
-  .clip .arrow{font-size:1rem;color:var(--ink-faint);transition:.4s var(--ease)}
-  .clip:hover .arrow{color:var(--ink);transform:scale(1.3)}
-
-  /* ---------- SERVICES ---------- */
-  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line-soft);border:1px solid var(--line-soft)}
-  .svc{background:var(--bg);padding:42px 34px;min-height:230px;display:flex;flex-direction:column;transition:background .4s var(--ease)}
-  .svc:hover{background:var(--surface)}
-  .svc .num{font-size:.72rem;color:var(--ink-faint);margin-bottom:auto}
-  .svc h3{font-family:'Fraunces',serif;font-weight:400;font-size:1.4rem;margin:44px 0 13px;letter-spacing:-.01em}
-  .svc p{font-size:.9rem;color:var(--ink-dim)}
-
-  /* ---------- PROCESS ---------- */
-  .proc{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--line)}
-  .step{padding:40px 26px 36px;border-right:1px solid var(--line-soft)}
-  .step:last-child{border-right:none}
-  .step .n{font-family:'Fraunces',serif;font-size:2.4rem;font-weight:300;color:var(--ink-faint);line-height:1;margin-bottom:28px;transition:color .35s}
-  .step:hover .n{color:var(--ink)}
-  .step h4{font-size:1rem;font-weight:500;margin-bottom:10px}
-  .step p{font-size:.85rem;color:var(--ink-dim)}
-
-  /* ---------- STUDIO ---------- */
-  .studio{display:grid;grid-template-columns:1.05fr .95fr;gap:80px;align-items:center}
-  .studio-text .sec-tc-inline{font-size:.74rem;color:var(--ink-faint);display:block;margin-bottom:28px;letter-spacing:.08em}
-  .studio-text p{color:var(--ink-dim);margin-bottom:22px;font-size:1rem}
-  .studio-text p.lead{font-family:'Fraunces',serif;font-size:1.55rem;color:var(--ink);line-height:1.4;font-weight:300;letter-spacing:-.01em}
-  .stats{display:flex;gap:0;margin-top:42px;border-top:1px solid var(--line)}
-  .stat{padding:26px 28px 4px 0;flex:1;border-right:1px solid var(--line-soft)}
-  .stat:last-child{border-right:none}
-  .stat:not(:first-child){padding-left:28px}
-  .stat .big{font-family:'Fraunces',serif;font-size:2.2rem;font-weight:300;color:var(--ink);line-height:1}
-  .stat .lbl{font-size:.74rem;color:var(--ink-dim);margin-top:10px;text-transform:uppercase;letter-spacing:.1em}
-  .studio-frame{aspect-ratio:4/5;border:1px solid var(--line);position:relative;overflow:hidden;background:linear-gradient(160deg,#141517,#0c0d0e);display:flex;align-items:flex-end;padding:30px}
-  .studio-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(100%) contrast(1.05) brightness(.86)}
-  .studio-shade{position:absolute;inset:0;background:linear-gradient(to top,rgba(8,9,10,.9) 0%,rgba(8,9,10,.12) 46%,rgba(8,9,10,.45) 100%)}
-  .studio-frame .corner{position:absolute;width:16px;height:16px;border:1px solid var(--ink-faint)}
-  .studio-frame .corner.tl{top:18px;left:18px;border-right:none;border-bottom:none}
-  .studio-frame .corner.tr{top:18px;right:18px;border-left:none;border-bottom:none}
-  .studio-frame .corner.bl{bottom:18px;left:18px;border-right:none;border-top:none}
-  .studio-frame .corner.br{bottom:18px;right:18px;border-left:none;border-top:none}
-  .studio-frame .fcap{font-size:.72rem;color:var(--ink-dim);position:relative;z-index:3}
-  .studio-frame .fcap b{color:var(--ink);font-weight:400;display:block;font-family:'Fraunces',serif;font-size:1.05rem;margin-top:6px;letter-spacing:-.01em}
-
-  /* ---------- CONTACT ---------- */
-  .contact{border-top:1px solid var(--line);text-align:center;background:var(--bg-2)}
-  .contact .sec-tc-inline{display:block;font-size:.74rem;color:var(--ink-faint);margin-bottom:26px;letter-spacing:.08em}
-  .contact h2{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(2.2rem,6vw,4.4rem);line-height:1.02;letter-spacing:-.025em;max-width:18ch;margin:0 auto 22px}
-  .contact h2 .it{font-style:italic;color:var(--ink-dim);font-weight:300}
-  .contact p{color:var(--ink-dim);max-width:44ch;margin:0 auto 38px}
-  .contact .hero-actions{justify-content:center}
-  .mailto{margin-top:58px;font-size:.88rem;color:var(--ink-faint);line-height:2.1}
-  .mailto a{color:var(--ink);border-bottom:1px solid var(--line);transition:border-color .25s}
-  .mailto a:hover{border-color:var(--ink)}
-
-  /* ---------- FOOTER ---------- */
-  footer{border-top:1px solid var(--line-soft);padding:60px 0 44px}
-  .foot{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;align-items:flex-start}
-  .foot .brand{margin-bottom:16px}
-  .foot p{color:var(--ink-faint);font-size:.84rem;max-width:30ch}
-  .foot-cols{display:flex;gap:72px;flex-wrap:wrap}
-  .foot-col h5{font-size:.72rem;text-transform:uppercase;letter-spacing:.18em;color:var(--ink-dim);margin-bottom:16px}
-  .foot-col a{display:block;font-size:.86rem;color:var(--ink-faint);margin-bottom:10px;transition:color .25s}
-  .foot-col a:hover{color:var(--ink)}
-  .foot-base{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:52px;padding-top:26px;border-top:1px solid var(--line-soft);font-size:.76rem;color:var(--ink-faint)}
-
-  /* ---------- VIDEO PLAYER (MODAL) ---------- */
-  .vmodal{position:fixed;inset:0;z-index:10000;display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;visibility:hidden;transition:opacity .35s var(--ease),visibility .35s var(--ease)}
-  .vmodal.open{opacity:1;visibility:visible}
-  .vmodal-backdrop{position:absolute;inset:0;background:rgba(5,6,7,.9);backdrop-filter:blur(8px)}
-  .vmodal-inner{position:relative;width:min(1080px,94vw);max-height:90vh;transform:translateY(14px) scale(.99);transition:transform .4s var(--ease)}
-  .vmodal.open .vmodal-inner{transform:none}
-  .vmodal-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:14px}
-  .vmodal-title{font-size:.74rem;color:var(--ink-dim);text-transform:uppercase;letter-spacing:.14em}
-  .vmodal-close{background:none;border:1px solid var(--line);color:var(--ink);width:38px;height:38px;border-radius:1px;cursor:pointer;font-size:.85rem;transition:.25s var(--ease);flex:none}
-  .vmodal-close:hover{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-  .vmodal-frame{position:relative;aspect-ratio:16/9;width:100%;background:#000;border:1px solid var(--line);overflow:hidden}
-  .vmodal-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-  .vmodal-msg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--ink-faint);font-family:'Fraunces',serif;font-style:italic;font-size:1.05rem}
-  .vmodal-tabs{display:none;gap:8px;margin-bottom:12px}
-  .vmodal-tabs.show{display:flex}
-  .vmodal-tab{padding:8px 16px;border:1px solid var(--line);border-radius:1px;background:transparent;color:var(--ink-dim);font-size:.76rem;letter-spacing:.04em;cursor:pointer;transition:.25s var(--ease);font-family:'Inter',sans-serif}
-  .vmodal-tab:hover{color:var(--ink);border-color:var(--ink-dim)}
-  .vmodal-tab.active{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-  @media(prefers-reduced-motion:reduce){.vmodal,.vmodal-inner{transition:opacity .2s linear}}
-
-  /* ---------- RESPONSIVE ---------- */
-  @media(max-width:900px){
-    nav ul{
-      display:flex;position:fixed;inset:0 0 auto 0;top:0;flex-direction:column;align-items:stretch;gap:0;
-      background:rgba(10,11,12,.98);backdrop-filter:blur(14px);
-      padding:104px 28px 32px;
-      transform:translateY(-100%);opacity:0;visibility:hidden;
-      transition:transform .4s var(--ease),opacity .3s var(--ease),visibility .4s;
-      z-index:200;
-    }
-    nav ul.open{transform:translateY(0);opacity:1;visibility:visible}
-    nav ul li{border-bottom:1px solid var(--line-soft)}
-    nav ul a{display:block;padding:20px 2px;font-size:1.05rem}
-    nav ul .nav-cta{border:none;padding:20px 2px;text-align:left}
-    .menu-btn{display:block}
-    .menu-btn .bars{display:block;position:relative;width:20px;height:14px;margin:0 auto}
-    .menu-btn .bars span{position:absolute;left:0;right:0;height:1.4px;background:currentColor;transition:transform .3s var(--ease),opacity .3s var(--ease),top .3s var(--ease)}
-    .menu-btn .bars span:nth-child(1){top:0}
-    .menu-btn .bars span:nth-child(2){top:6px}
-    .menu-btn .bars span:nth-child(3){top:12px}
-    .menu-btn.open .bars span:nth-child(1){top:6px;transform:rotate(45deg)}
-    .menu-btn.open .bars span:nth-child(2){opacity:0}
-    .menu-btn.open .bars span:nth-child(3){top:6px;transform:rotate(-45deg)}
-    .svc-grid{grid-template-columns:1fr 1fr}
-    .proc{grid-template-columns:1fr 1fr;border:1px solid var(--line)}
-    .step{border-bottom:1px solid var(--line-soft)}
-    .studio{grid-template-columns:1fr;gap:48px}
-    .studio-frame{aspect-ratio:16/10;order:-1}
-    .sec-head{grid-template-columns:1fr}.sec-lead{grid-column:1;grid-row:auto;justify-self:start;margin-top:8px}
-  }
-  @media(max-width:620px){
-    section{padding:96px 0}
-    .wrap,.hero-grid{padding:0 24px}
-    header.nav{padding:18px 24px}
-    .svc-grid{grid-template-columns:1fr}
-    .proc{grid-template-columns:1fr}
-    .clip{grid-template-columns:34px 1fr auto;gap:16px;padding:24px 4px}
-    .clip .dur{display:none}
-    .hero-bottom{flex-direction:column;align-items:flex-start}
-    .scrollcue{left:24px}
-    .stats{flex-wrap:wrap}.stat{min-width:40%}
-  }
-  @media(prefers-reduced-motion:reduce){
-    *{animation:none!important;transition:none!important}
-    .reveal{opacity:1;transform:none}
-    .hero-video{display:none}
-    h1.hero-title .line>span,.hero-eyebrow,.hero-bottom,.scrollcue,.bar.top,.bar.bot{opacity:1;transform:none}
-  }
-  :focus-visible{outline:1px solid var(--ink);outline-offset:3px}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/site.css">
 </head>
 <body>
-<div class="grain" aria-hidden="true"></div>
 
-<!-- NAV -->
-<header class="nav" id="nav">
-  <a class="brand" href="#top">
-    <svg class="logo-mark" viewBox="0 0 44 44" aria-hidden="true" focusable="false"><rect x="1.7" y="1.7" width="40.6" height="40.6" rx="9" fill="none" stroke="currentColor" stroke-width="1.3"/><text x="22" y="23" text-anchor="middle" dominant-baseline="central" font-family="Fraunces, serif" font-size="23" fill="currentColor">R</text></svg>
-    <span><b>RÖTHLISBERGER</b> <span class="sub">Videoproductions</span></span>
-  </a>
-  <nav>
-    <ul id="navList">
-      <li><a href="#work">Arbeiten</a></li>
-      <li><a href="#leistungen">Leistungen</a></li>
-      <li><a href="#prozess">Prozess</a></li>
-      <li><a href="#studio">Studio</a></li>
-      <li><a class="nav-cta" href="#kontakt">Anfragen</a></li>
-    </ul>
-  </nav>
-  <button class="menu-btn" id="menuBtn" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navList">
-    <span class="bars" aria-hidden="true"><span></span><span></span><span></span></span>
-  </button>
+<!-- KOPFZEILE -->
+<header class="top" id="topBar">
+  <a class="logo" href="#top" aria-label="rotvideo – Röthlisberger Videoproductions">rotvideo</a>
+  <a class="btn-line" href="#kontakt">Kontakt</a>
 </header>
+
+<main>
 
 <!-- HERO -->
 <section class="hero" id="top">
-  <div class="hero-video" aria-hidden="true">
-    <video autoplay muted loop playsinline preload="auto" poster="hero-poster.jpg">
-      <source src="hero.mp4" type="video/mp4">
-    </video>
-  </div>
-  <div class="bar top" aria-hidden="true"></div>
-  <div class="hero-grid">
-    <div class="hero-eyebrow">
-      <span>Werbe- &amp; Corporate-Film</span>
-      <span class="div"></span>
-      <span class="tc mono">Oberdorf SO · CH</span>
-    </div>
-    <h1 class="hero-title">
-      <span class="line"><span>Jede Marke hat</span></span>
-      <span class="line"><span>einen Film.</span></span>
-      <span class="line"><span><span class="it">Wir drehen Ihren.</span></span></span>
-    </h1>
-    <div class="hero-bottom">
-      <p class="hero-sub">Von der Idee bis zum fertigen Film – alles aus einer Hand.</p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="#work"><span class="play">▶</span> Showreel</a>
-        <a class="btn btn-ghost" href="#kontakt">Projekt anfragen</a>
-      </div>
-    </div>
-  </div>
-  <div class="scrollcue"><span>Scroll</span><span class="ln"></span></div>
-  <div class="bar bot" aria-hidden="true"></div>
+  <video autoplay muted loop playsinline preload="auto" poster="/hero-poster.jpg" aria-hidden="true">
+    <source src="/hero.mp4" type="video/mp4">
+  </video>
+  <a class="hero-reel" href="#arbeiten">
+    <svg width="11" height="11" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5v11l9-5.5z" fill="currentColor"/></svg>
+    Showreel
+  </a>
 </section>
 
-<!-- CLIENT STRIP -->
-<div class="strip" aria-label="Kundenauswahl">
-  <div class="marquee" aria-hidden="true">
-    <span>Sportzentrum Zuchwil</span><span>Lupo &amp; Zuccarello Architekten</span><span>Krebsliga beider Basel</span><span>Dentalspecialist Dr. Sleiter AG</span><span>SRSO Artistic Swimming</span><span>Sportzentrum Zuchwil</span><span>Lupo &amp; Zuccarello Architekten</span><span>Krebsliga beider Basel</span><span>Dentalspecialist Dr. Sleiter AG</span><span>SRSO Artistic Swimming</span>
-    <span>Sportzentrum Zuchwil</span><span>Lupo &amp; Zuccarello Architekten</span><span>Krebsliga beider Basel</span><span>Dentalspecialist Dr. Sleiter AG</span><span>SRSO Artistic Swimming</span><span>Sportzentrum Zuchwil</span><span>Lupo &amp; Zuccarello Architekten</span><span>Krebsliga beider Basel</span><span>Dentalspecialist Dr. Sleiter AG</span><span>SRSO Artistic Swimming</span>
-  </div>
+<div class="row row--under">
+  <p class="dim">Filmproduktion · Oberdorf SO</p>
+  <p>Von der Idee bis zum fertigen Film – alles aus einer Hand.</p>
 </div>
 
-<!-- WORK -->
-<section id="work">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="sec-tc mono">01 — Arbeiten</span>
-      <h2 class="sec-title">Ausgewählte Produktionen</h2>
-      <p class="sec-lead">Eine Auswahl aus unserer Arbeit.</p>
-    </div>
-    <!-- VIDEO-LINKS: bei data-video die Embed-URL eintragen.
-         YouTube:  https://www.youtube.com/embed/VIDEO_ID
-         Vimeo:    https://player.vimeo.com/video/VIDEO_ID
-         Solange data-video leer ist, zeigt der Player "Video folgt". -->
-    <div class="reel">
-      <a class="clip reveal" href="#" data-video="https://www.youtube.com/embed/Avyj_dmTHeM" data-title="Sportzentrum Zuchwil — Werbefilm & Recruitingfilm"><span class="idx mono">01</span><span class="meta"><span class="title">Sportzentrum Zuchwil</span><span class="tag">Werbefilm &amp; Recruitingfilm</span></span><span class="dur mono">SPORT &amp; FREIZEIT</span><span class="arrow">▶</span></a>
-      <a class="clip reveal" href="#" data-video="https://www.youtube.com/embed/47pYF237b7M" data-title="Lupo & Zuccarello Architekten — Imagefilm"><span class="idx mono">02</span><span class="meta"><span class="title">Lupo &amp; Zuccarello Architekten</span><span class="tag">Imagefilm · Architektur</span></span><span class="dur mono">ARCHITEKTUR</span><span class="arrow">▶</span></a>
-      <a class="clip reveal" href="#" data-video="https://www.youtube.com/embed/Ii1HDLkCDK8" data-title="Krebsliga beider Basel — Projektfilme"><span class="idx mono">03</span><span class="meta"><span class="title">Krebsliga beider Basel</span><span class="tag">Projektfilme · Aufklärung &amp; Begleitung</span></span><span class="dur mono">NON-PROFIT</span><span class="arrow">▶</span></a>
-      <a class="clip reveal" href="#"
-         data-video="https://www.youtube.com/embed/aND4ikU_FZk" data-title="Dentalspecialist Dr. Sleiter AG — Praxisvideo"
-         data-video2="https://www.youtube.com/embed/VdsTe-JeuvY" data-title2="Dentalspecialist Dr. Sleiter AG — All-on-4-Methode"
-         data-label1="Praxisvideo" data-label2="All-on-4-Methode">
-        <span class="idx mono">04</span><span class="meta"><span class="title">Dentalspecialist Dr. Sleiter AG</span><span class="tag">Praxisvideo &amp; All-on-4-Methode</span></span><span class="dur mono">MEDIZIN</span><span class="arrow">▶</span>
-      </a>
-      <a class="clip reveal" href="#" data-video="https://www.youtube.com/embed/qCzlZXRlTjk" data-title="SRSO Artistic Swimming"><span class="idx mono">05</span><span class="meta"><span class="title">SRSO Artistic Swimming</span><span class="tag">Projektfilm · Sport</span></span><span class="dur mono">SPORT</span><span class="arrow">▶</span></a>
+<!-- ARBEITEN -->
+<section id="arbeiten">
+  <div class="head">
+    <h2>Ausgewählte Produktionen</h2>
+  </div>
+
+  <!-- VORSCHAUBILDER: kommen von YouTube (i.ytimg.com). Für ein eigenes Bild einfach src ersetzen
+       (z. B. src="/stills/zuchwil.jpg") und data-fallback löschen.
+       VIDEO-LINKS: data-video = Embed-URL. Ein zweites Video pro Kunde geht über data-video2 / data-label1 / data-label2. -->
+  <div class="wall">
+    <a class="film film--wide reveal" href="https://www.youtube.com/watch?v=Avyj_dmTHeM"
+       data-video="https://www.youtube.com/embed/Avyj_dmTHeM" data-title="Sportzentrum Zuchwil — Werbefilm &amp; Recruitingfilm">
+      <span class="film-img"><img src="https://i.ytimg.com/vi/Avyj_dmTHeM/maxresdefault.jpg" data-fallback="https://i.ytimg.com/vi/Avyj_dmTHeM/hqdefault.jpg" alt="" loading="lazy"></span>
+      <span class="film-cap">
+        <span><svg width="9" height="9" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5v11l9-5.5z" fill="currentColor"/></svg>Sportzentrum Zuchwil <span class="dim">| Werbefilm &amp; Recruitingfilm</span></span>
+        <span class="dim">Sport &amp; Freizeit</span>
+      </span>
+    </a>
+
+    <a class="film reveal" href="https://www.youtube.com/watch?v=47pYF237b7M"
+       data-video="https://www.youtube.com/embed/47pYF237b7M" data-title="Lupo &amp; Zuccarello Architekten — Imagefilm">
+      <span class="film-img"><img src="https://i.ytimg.com/vi/47pYF237b7M/maxresdefault.jpg" data-fallback="https://i.ytimg.com/vi/47pYF237b7M/hqdefault.jpg" alt="" loading="lazy"></span>
+      <span class="film-cap">
+        <span><svg width="9" height="9" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5v11l9-5.5z" fill="currentColor"/></svg>Lupo &amp; Zuccarello Architekten <span class="dim">| Imagefilm</span></span>
+        <span class="dim">Architektur</span>
+      </span>
+    </a>
+
+    <a class="film reveal" href="https://www.youtube.com/watch?v=Ii1HDLkCDK8"
+       data-video="https://www.youtube.com/embed/Ii1HDLkCDK8" data-title="Krebsliga beider Basel — Projektfilme">
+      <span class="film-img"><img src="https://i.ytimg.com/vi/Ii1HDLkCDK8/maxresdefault.jpg" data-fallback="https://i.ytimg.com/vi/Ii1HDLkCDK8/hqdefault.jpg" alt="" loading="lazy"></span>
+      <span class="film-cap">
+        <span><svg width="9" height="9" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5v11l9-5.5z" fill="currentColor"/></svg>Krebsliga beider Basel <span class="dim">| Projektfilme · Aufklärung &amp; Begleitung</span></span>
+        <span class="dim">Non-Profit</span>
+      </span>
+    </a>
+
+    <a class="film reveal" href="https://www.youtube.com/watch?v=aND4ikU_FZk"
+       data-video="https://www.youtube.com/embed/aND4ikU_FZk" data-title="Dentalspecialist Dr. Sleiter AG — Praxisvideo"
+       data-video2="https://www.youtube.com/embed/VdsTe-JeuvY"
+       data-label1="Praxisvideo" data-label2="All-on-4-Methode">
+      <span class="film-img"><img src="https://i.ytimg.com/vi/aND4ikU_FZk/maxresdefault.jpg" data-fallback="https://i.ytimg.com/vi/aND4ikU_FZk/hqdefault.jpg" alt="" loading="lazy"></span>
+      <span class="film-cap">
+        <span><svg width="9" height="9" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5v11l9-5.5z" fill="currentColor"/></svg>Dentalspecialist Dr. Sleiter AG <span class="dim">| Praxisvideo &amp; All-on-4-Methode</span></span>
+        <span class="dim">Medizin</span>
+      </span>
+    </a>
+
+    <a class="film reveal" href="https://www.youtube.com/watch?v=qCzlZXRlTjk"
+       data-video="https://www.youtube.com/embed/qCzlZXRlTjk" data-title="SRSO Artistic Swimming — Projektfilm">
+      <span class="film-img"><img src="https://i.ytimg.com/vi/qCzlZXRlTjk/maxresdefault.jpg" data-fallback="https://i.ytimg.com/vi/qCzlZXRlTjk/hqdefault.jpg" alt="" loading="lazy"></span>
+      <span class="film-cap">
+        <span><svg width="9" height="9" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5v11l9-5.5z" fill="currentColor"/></svg>SRSO Artistic Swimming <span class="dim">| Projektfilm</span></span>
+        <span class="dim">Sport</span>
+      </span>
+    </a>
+  </div>
+</section>
+
+<!-- LEISTUNGEN -->
+<section class="sec" id="leistungen">
+  <div class="head"><h2>Was wir machen</h2></div>
+  <div class="statement reveal">
+    <p class="display">Vom Imagefilm bis zum Social Content: Wir drehen den Film, der zu Ihnen passt.</p>
+  </div>
+</section>
+
+<!-- PROZESS -->
+<section class="row row--over" id="prozess">
+  <h2>Von der Idee zur Auslieferung</h2>
+  <ol class="steps">
+    <li>Briefing</li>
+    <li>Konzept</li>
+    <li>Produktion</li>
+    <li>Postproduktion</li>
+    <li>Delivery</li>
+  </ol>
+</section>
+
+<!-- ÜBER UNS -->
+<section class="sec" id="studio">
+  <div class="head head--over"><h2>Über uns</h2></div>
+  <div class="about reveal">
+    <figure>
+      <img src="/studio.jpg" width="828" height="750" alt="Am Set – das Team von Röthlisberger Videoproductions" loading="lazy">
+      <figcaption><span>Nik &amp; Matthias</span><span>Die zwei hinter den Filmen.</span></figcaption>
+    </figure>
+    <div class="about-text">
+      <p class="display">Ein kleines Studio, das grosse Filme macht.</p>
+      <p class="body">Vom ersten Gespräch bis zum fertigen Film arbeiten Sie mit demselben Team zusammen.</p>
+      <dl class="stats">
+        <div><dt>Jahre</dt><dd>4+</dd></div>
+        <div><dt>Produktionen</dt><dd>20+</dd></div>
+        <div><dt>Cinema-Workflow</dt><dd>4K</dd></div>
+      </dl>
     </div>
   </div>
 </section>
 
-<!-- SERVICES -->
-<section id="leistungen">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="sec-tc mono">02 — Leistungen</span>
-      <h2 class="sec-title">Was wir machen</h2>
-      <p class="sec-lead">Was wir für Sie drehen.</p>
-    </div>
-    <div class="svc-grid reveal">
-      <div class="svc"><span class="num mono">01</span><h3>Werbefilm</h3><p>Spots, die im Kopf bleiben.</p></div>
-      <div class="svc"><span class="num mono">02</span><h3>Imagefilm</h3><p>Zeigen, wer Sie wirklich sind.</p></div>
-      <div class="svc"><span class="num mono">03</span><h3>Recruitingfilm</h3><p>Filme, die die richtigen Leute anziehen.</p></div>
-      <div class="svc"><span class="num mono">04</span><h3>Projektfilm</h3><p>Ihr Projekt, ehrlich festgehalten.</p></div>
-      <div class="svc"><span class="num mono">05</span><h3>Praxisfilm</h3><p>Ihre Praxis und Ihr Team persönlich vorgestellt.</p></div>
-      <div class="svc"><span class="num mono">06</span><h3>Social Content</h3><p>Kurze Videos für Instagram und Co.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- PROCESS -->
-<section id="prozess">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="sec-tc mono">03 — Prozess</span>
-      <h2 class="sec-title">Von der Idee zur Auslieferung</h2>
-      <p class="sec-lead">Fünf Schritte, ein Ansprechpartner.</p>
-    </div>
-    <div class="proc reveal">
-      <div class="step"><div class="n">01</div><h4>Briefing</h4><p>Wir hören zu und verstehen, was Sie brauchen.</p></div>
-      <div class="step"><div class="n">02</div><h4>Konzept</h4><p>Kein Film ohne klaren Plan.</p></div>
-      <div class="step"><div class="n">03</div><h4>Produktion</h4><p>Dreh mit eigenem Team und Equipment.</p></div>
-      <div class="step"><div class="n">04</div><h4>Postproduktion</h4><p>Der letzte Schliff: Schnitt, Farbe, Ton.</p></div>
-      <div class="step"><div class="n">05</div><h4>Delivery</h4><p>Ihr fertiger Film, überall einsatzbereit.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- STUDIO -->
-<section id="studio">
-  <div class="wrap">
-    <div class="studio">
-      <div class="studio-text reveal">
-        <span class="sec-tc-inline mono">04 — Studio</span>
-        <p class="lead">Ein kleines Studio, das grosse Filme macht.</p>
-        <p>Vom ersten Gespräch bis zum fertigen Film arbeiten Sie mit demselben Team zusammen. Kurze Wege, klare Sprache – und ein Resultat, das Sie gerne zeigen.</p>
-        <div class="stats">
-          <div class="stat"><div class="big mono">4+</div><div class="lbl">Jahre</div></div>
-          <div class="stat"><div class="big mono">20+</div><div class="lbl">Produktionen</div></div>
-          <div class="stat"><div class="big mono">4K</div><div class="lbl">Cinema-Workflow</div></div>
-        </div>
-      </div>
-      <div class="studio-frame reveal">
-        <img class="studio-img" src="studio.jpg" alt="Am Set – das Team von Röthlisberger Videoproductions">
-        <div class="studio-shade" aria-hidden="true"></div>
-        <span class="corner tl" aria-hidden="true"></span><span class="corner tr" aria-hidden="true"></span><span class="corner bl" aria-hidden="true"></span><span class="corner br" aria-hidden="true"></span>
-        <span class="fcap mono">SCENE 04 · DAS TEAM<b>Die zwei hinter den Filmen.</b></span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
+<!-- KONTAKT -->
 <section class="contact" id="kontakt">
-  <div class="wrap">
-    <span class="sec-tc-inline mono">05 — Kontakt</span>
-    <h2>Erzählen Sie uns von <span class="it">Ihrem Projekt.</span></h2>
-    <p>Ob konkretes Briefing oder erste Idee – schreiben Sie uns.</p>
-    <div class="hero-actions">
-      <a class="btn btn-primary" href="mailto:info@rotvideo.ch">Projekt anfragen</a>
-      <a class="btn btn-ghost" href="#work">Showreel ansehen</a>
-    </div>
-    <p class="mailto">Oder direkt: <a href="mailto:info@rotvideo.ch">info@rotvideo.ch</a><br><a href="tel:+41798928286">+41 79 892 82 86</a></p>
+  <div class="contact-text">
+    <h2 class="display">Erzählen Sie uns von Ihrem Projekt.</h2>
+    <p class="dim">Ob konkretes Briefing oder erste Idee – schreiben Sie uns.</p>
+  </div>
+  <div class="contact-links">
+    <a class="btn-solid" href="mailto:info@rotvideo.ch">Projekt anfragen</a>
+    <a class="link" href="mailto:info@rotvideo.ch">info@rotvideo.ch</a>
+    <a class="link" href="tel:+41798928286">+41 79 892 82 86</a>
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="wrap">
-    <div class="foot">
-      <div>
-        <a class="brand" href="#top"><svg class="logo-mark" viewBox="0 0 44 44" aria-hidden="true" focusable="false"><rect x="1.7" y="1.7" width="40.6" height="40.6" rx="9" fill="none" stroke="currentColor" stroke-width="1.3"/><text x="22" y="23" text-anchor="middle" dominant-baseline="central" font-family="Fraunces, serif" font-size="23" fill="currentColor">R</text></svg><span><b>RÖTHLISBERGER</b> <span class="sub">Videoproductions</span></span></a>
-        <p>Werbe- und Imagefilm aus Oberdorf SO.<br>Weissensteinstrasse 105, 4515 Oberdorf SO</p>
-      </div>
-      <div class="foot-cols">
-        <div class="foot-col"><h5>Studio</h5><a href="#work">Arbeiten</a><a href="#leistungen">Leistungen</a><a href="#prozess">Prozess</a><a href="#studio">Über uns</a></div>
-        <div class="foot-col"><h5>Kontakt</h5><a href="mailto:info@rotvideo.ch">info@rotvideo.ch</a><a href="tel:+41798928286">+41 79 892 82 86</a><a href="#kontakt">Anfrage senden</a></div>
-        <div class="foot-col"><h5>Social</h5><a href="https://www.instagram.com/r_videoproductions/" target="_blank" rel="noopener">Instagram</a><a href="https://www.youtube.com/@R%C3%B6thlisbergerVideoproductions" target="_blank" rel="noopener">YouTube</a><a href="https://www.linkedin.com/company/r%C3%B6thlisbergervideoproductions/" target="_blank" rel="noopener">LinkedIn</a></div>
-      </div>
-    </div>
-    <div class="foot-base">
-      <span>© 2026 Röthlisberger Videoproductions · Weissensteinstrasse 105, 4515 Oberdorf SO · <a href="/datenschutz.html">Datenschutz</a> · <a href="#" id="cookieSettingsLink">Cookie-Einstellungen</a></span>
-      <span class="mono">Made in Switzerland</span>
-    </div>
+</main>
+
+<!-- FUSSZEILE -->
+<footer class="foot">
+  <p>Werbe- und Imagefilm aus Oberdorf SO.<br>Weissensteinstrasse 105, 4515 Oberdorf SO</p>
+  <div class="foot-group">
+    <a href="https://www.instagram.com/r_videoproductions/" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://www.youtube.com/@R%C3%B6thlisbergerVideoproductions" target="_blank" rel="noopener">YouTube</a>
+    <a href="https://www.linkedin.com/company/r%C3%B6thlisbergervideoproductions/" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+  <div class="foot-group">
+    <span>© 2026 Röthlisberger Videoproductions</span>
+    <a href="/datenschutz.html">Datenschutz</a>
+    <button type="button" id="cookieSettingsLink">Cookie-Einstellungen</button>
+    <span>Made in Switzerland</span>
+    <span class="lang"><span class="on" aria-current="true">DE</span><span aria-hidden="true">/</span><a href="/en/" lang="en" hreflang="en" aria-label="English version">EN</a></span>
   </div>
 </footer>
 
-<!-- VIDEO PLAYER -->
+<!-- VIDEO-POPUP -->
 <div class="vmodal" id="vmodal" role="dialog" aria-modal="true" aria-label="Video-Player" aria-hidden="true">
   <div class="vmodal-backdrop" data-close></div>
   <div class="vmodal-inner">
     <div class="vmodal-bar">
-      <span class="vmodal-title mono" id="vmodalTitle"></span>
+      <span class="vmodal-title" id="vmodalTitle"></span>
       <button class="vmodal-close" type="button" aria-label="Schliessen" data-close>✕</button>
     </div>
     <div class="vmodal-tabs" id="vmodalTabs"></div>
@@ -499,150 +195,17 @@
   </div>
 </div>
 
-<script>
-  const nav=document.getElementById('nav');
-  addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40),{passive:true});
-
-  /* ---- Mobile-Menü ---- */
-  const menuBtn=document.getElementById('menuBtn');
-  const navList=document.getElementById('navList');
-  function setMenu(open){
-    menuBtn.classList.toggle('open',open);
-    navList.classList.toggle('open',open);
-    menuBtn.setAttribute('aria-expanded',open?'true':'false');
-    menuBtn.setAttribute('aria-label',open?'Menü schliessen':'Menü öffnen');
-    document.body.style.overflow=open?'hidden':'';
-  }
-  menuBtn.addEventListener('click',()=>setMenu(!navList.classList.contains('open')));
-  navList.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
-  addEventListener('keydown',e=>{if(e.key==='Escape')setMenu(false);});
-  matchMedia('(min-width:901px)').addEventListener('change',e=>{if(e.matches)setMenu(false);});
-
-  const io=new IntersectionObserver((es)=>{
-    es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
-  },{threshold:.12,rootMargin:'0px 0px -8% 0px'});
-  document.querySelectorAll('.reveal').forEach((el,i)=>{
-    if(el.parentElement.classList.contains('reel')) el.style.transitionDelay=(i%6*55)+'ms';
-    io.observe(el);
-  });
-
-  /* ---- Video-Popup ---- */
-  const vmodal=document.getElementById('vmodal');
-  const vframe=document.getElementById('vmodalIframe');
-  const vtitle=document.getElementById('vmodalTitle');
-  const vmsg=document.getElementById('vmodalMsg');
-  const vtabs=document.getElementById('vmodalTabs');
-  let vLastFocus=null;
-
-  function setVideo(url){
-    if(url){
-      vframe.src=url+(url.includes('?')?'&':'?')+'autoplay=1';
-      vframe.style.display='';
-      vmsg.style.display='none';
-    }else{
-      vframe.removeAttribute('src');
-      vframe.style.display='none';
-      vmsg.style.display='';
-    }
-  }
-
-  function openVideo(url,title,url2,label1,label2){
-    vLastFocus=document.activeElement;
-    vtitle.textContent=title||'';
-    vtabs.innerHTML='';
-    if(url2){
-      vtabs.classList.add('show');
-      const b1=document.createElement('button'); b1.className='vmodal-tab active'; b1.type='button'; b1.textContent=label1||'Video 1';
-      const b2=document.createElement('button'); b2.className='vmodal-tab'; b2.type='button'; b2.textContent=label2||'Video 2';
-      b1.addEventListener('click',()=>{setVideo(url);b1.classList.add('active');b2.classList.remove('active');});
-      b2.addEventListener('click',()=>{setVideo(url2);b2.classList.add('active');b1.classList.remove('active');});
-      vtabs.append(b1,b2);
-    }else{
-      vtabs.classList.remove('show');
-    }
-    setVideo(url||'');
-    vmodal.classList.add('open');
-    vmodal.setAttribute('aria-hidden','false');
-    document.body.style.overflow='hidden';
-    vmodal.querySelector('.vmodal-close').focus();
-  }
-  function closeVideo(){
-    vmodal.classList.remove('open');
-    vmodal.setAttribute('aria-hidden','true');
-    vframe.removeAttribute('src');
-    document.body.style.overflow='';
-    if(vLastFocus)vLastFocus.focus();
-  }
-
-  document.querySelectorAll('.clip').forEach(c=>{
-    c.addEventListener('click',e=>{
-      e.preventDefault();
-      const t=c.dataset.title||(c.querySelector('.title')?c.querySelector('.title').textContent:'');
-      openVideo(c.dataset.video||'',t,c.dataset.video2||'',c.dataset.label1||'',c.dataset.label2||'');
-    });
-  });
-  vmodal.querySelectorAll('[data-close]').forEach(el=>el.addEventListener('click',closeVideo));
-  addEventListener('keydown',e=>{if(e.key==='Escape'&&vmodal.classList.contains('open'))closeVideo();});
-
-  /* ---- Hintergrund-Video sicher starten ---- */
-  const heroVid=document.querySelector('.hero-video video');
-  if(heroVid){
-    heroVid.muted=true;
-    heroVid.setAttribute('muted','');
-    heroVid.playsInline=true;
-    const tryPlay=()=>{const p=heroVid.play();if(p&&p.catch)p.catch(()=>{});};
-    tryPlay();
-    heroVid.addEventListener('canplay',tryPlay,{once:true});
-    ['click','touchstart','scroll','keydown'].forEach(ev=>
-      addEventListener(ev,tryPlay,{once:true,passive:true}));
-  }
-</script>
-
 <!-- COOKIE-BANNER -->
 <div class="cookie-banner" id="cookieBanner" role="dialog" aria-live="polite" aria-label="Cookie-Einstellungen">
   <div class="cookie-inner">
     <p>Wir nutzen ein Google-Tag, um zu messen, ob Besuche über unsere Google-Anzeigen zustande kommen. Dabei werden Cookies gesetzt. Unsere Vercel-Analytics zur reinen Reichweitenmessung ist davon unabhängig und cookielos. Mehr dazu in der <a href="/datenschutz.html">Datenschutzerklärung</a>.</p>
     <div class="cookie-actions">
-      <button id="cookieDecline" class="btn btn-ghost" type="button">Nur notwendige</button>
-      <button id="cookieAccept" class="btn btn-primary" type="button">Akzeptieren</button>
+      <button id="cookieDecline" type="button">Nur notwendige</button>
+      <button id="cookieAccept" class="solid" type="button">Akzeptieren</button>
     </div>
   </div>
 </div>
-<script>
-(function(){
-  var CONSENT_KEY='rotvideo-consent', GADS_ID='AW-17185410340';
-  var banner=document.getElementById('cookieBanner');
 
-  function loadGtag(){
-    if(window.__gtagLoaded) return;
-    window.__gtagLoaded=true;
-    window.dataLayer=window.dataLayer||[];
-    window.gtag=function(){dataLayer.push(arguments);};
-    gtag('js', new Date());
-    gtag('config', GADS_ID);
-    var s=document.createElement('script');
-    s.async=true;
-    s.src='https://www.googletagmanager.com/gtag/js?id='+GADS_ID;
-    document.head.appendChild(s);
-  }
-  function showBanner(){ banner.classList.add('show'); }
-  function hideBanner(){ banner.classList.remove('show'); }
-  function setConsent(value){
-    try{ localStorage.setItem(CONSENT_KEY,value); }catch(e){}
-    hideBanner();
-    if(value==='granted') loadGtag();
-  }
-
-  var stored;
-  try{ stored=localStorage.getItem(CONSENT_KEY); }catch(e){ stored=null; }
-  if(stored==='granted'){ loadGtag(); }
-  else if(stored!=='denied'){ setTimeout(showBanner,600); }
-
-  document.getElementById('cookieAccept').addEventListener('click',function(){ setConsent('granted'); });
-  document.getElementById('cookieDecline').addEventListener('click',function(){ setConsent('denied'); });
-  var settingsLink=document.getElementById('cookieSettingsLink');
-  if(settingsLink) settingsLink.addEventListener('click',function(e){ e.preventDefault(); showBanner(); });
-})();
-</script>
+<script src="/site.js"></script>
 </body>
 </html>

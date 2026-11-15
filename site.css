@@ -43,6 +43,12 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer;let
   border:1px solid var(--ink);transition:background .25s var(--ease),color .25s var(--ease);
 }
 .btn-line:hover{background:var(--ink);color:var(--bg)}
+.top-right{display:flex;align-items:center;gap:clamp(6px,1.4vw,18px)}
+.lang{display:inline-flex;align-items:center}
+.lang a,.lang .on{display:inline-flex;align-items:center;justify-content:center;min-width:34px;min-height:44px}
+.lang a{opacity:.72;transition:opacity .25s var(--ease)}
+.lang a:hover{opacity:1}
+.lang .on{font-weight:600}
 
 /* ---------- Hero ---------- */
 .hero{
@@ -143,9 +149,6 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer;let
 .foot a,.foot button{display:inline-flex;align-items:center;min-height:44px;color:var(--dim);transition:color .25s}
 .foot a:hover,.foot button:hover{color:var(--ink)}
 .foot-group{display:flex;flex-wrap:wrap;align-items:center;gap:0 28px}
-.lang{display:inline-flex;align-items:center;gap:4px}
-.lang .on{color:var(--ink)}
-.lang a{justify-content:center;min-width:44px}
 
 /* ---------- Einblenden beim Scrollen ---------- */
 .js .reveal{opacity:0;transform:translateY(18px);transition:opacity .8s var(--ease),transform .8s var(--ease)}

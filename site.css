@@ -58,17 +58,25 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer;let
 .hero video{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover}
 .hero::after{
   content:"";position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;
-  background:linear-gradient(180deg,rgba(0,0,0,.66) 0%,rgba(0,0,0,.3) 26%,rgba(0,0,0,.3) 58%,rgba(0,0,0,.8) 100%);
+  background:linear-gradient(180deg,rgba(0,0,0,.66) 0%,rgba(0,0,0,.16) 26%,rgba(0,0,0,.16) 58%,rgba(0,0,0,.8) 100%);
 }
 .hero-name{
-  position:absolute;top:50%;left:0;width:100%;transform:translateY(-50%);z-index:1;
+  position:absolute;top:50%;left:0;width:100%;z-index:1;
+  transform:translate(var(--dx,0px),calc(-50% + var(--dy,0px)));
   display:flex;flex-direction:column;align-items:center;gap:clamp(10px,1.2vw,18px);
   padding:0 var(--pad);text-align:center;pointer-events:none;
-  text-shadow:0 0 56px rgba(0,0,0,.55);
+  text-shadow:0 0 48px rgba(0,0,0,.35);
   animation:nameIn 1.4s var(--ease) .2s both;
 }
-.hero-name-big{font-size:clamp(56px,10.5vw,156px);font-weight:600;line-height:.9;letter-spacing:-.045em}
-.hero-name-sub{font-size:15px;font-weight:400;letter-spacing:.01em}
+/* Wasserzeichen: halb durchsichtig. Mit der Maus lässt sich der Name verschieben (site.js). */
+.hero-name:not(.dragging){transition:transform .6s var(--ease)}
+.hero-name-big{
+  font-size:clamp(56px,10.5vw,156px);font-weight:600;line-height:.9;letter-spacing:-.045em;
+  color:rgba(255,255,255,.6);pointer-events:auto;cursor:grab;
+  -webkit-user-select:none;user-select:none;
+}
+.hero-name.dragging .hero-name-big{cursor:grabbing}
+.hero-name-sub{font-size:15px;font-weight:400;letter-spacing:.01em;color:rgba(255,255,255,.82)}
 @keyframes nameIn{from{opacity:0}to{opacity:1}}
 /* Solange der grosse Name im Bild steht, bleibt das kleine Logo oben links ausgeblendet */
 .top .logo{transition:opacity .4s var(--ease),visibility .4s}

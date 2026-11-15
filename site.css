@@ -201,6 +201,7 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer;let
 .legal h1{font-size:var(--display);font-weight:500;line-height:1.14;letter-spacing:-.01em;margin-bottom:8px}
 .legal .updated{color:var(--dim);margin-bottom:48px}
 .legal h2{font-size:15px;font-weight:600;margin:40px 0 12px;padding-top:18px;border-top:1px solid var(--line)}
+.legal h2.legal-title{font-size:var(--display);font-weight:500;line-height:1.14;letter-spacing:-.01em;margin:var(--gap) 0 8px;padding-top:0;border-top:none}
 .legal p{color:var(--soft);margin-bottom:12px;line-height:1.7}
 .legal p strong{color:var(--ink);font-weight:600}
 .legal a{text-decoration:underline;text-underline-offset:4px;text-decoration-color:rgba(255,255,255,.45)}

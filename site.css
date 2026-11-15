@@ -61,28 +61,25 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer;let
   background:linear-gradient(180deg,rgba(0,0,0,.66) 0%,rgba(0,0,0,.16) 26%,rgba(0,0,0,.16) 58%,rgba(0,0,0,.8) 100%);
 }
 .hero-name{
-  position:absolute;top:50%;left:0;width:100%;z-index:1;
-  transform:translate(var(--dx,0px),calc(-50% + var(--dy,0px)));
+  position:absolute;top:50%;left:0;width:100%;transform:translateY(-50%);z-index:1;
   display:flex;flex-direction:column;align-items:center;gap:clamp(10px,1.2vw,18px);
   padding:0 var(--pad);text-align:center;pointer-events:none;
   text-shadow:0 0 48px rgba(0,0,0,.35);
   animation:nameIn 1.4s var(--ease) .2s both;
 }
-/* Wasserzeichen: halb durchsichtig. Mit der Maus lässt sich der Name verschieben (site.js). */
-.hero-name:not(.dragging){transition:transform .6s var(--ease)}
-.hero-name-big{
-  font-size:clamp(56px,10.5vw,156px);font-weight:600;line-height:.9;letter-spacing:-.045em;
-  color:rgba(255,255,255,.6);pointer-events:auto;cursor:grab;
-  -webkit-user-select:none;user-select:none;
-}
-.hero-name.dragging .hero-name-big{cursor:grabbing}
+/* Flacher Schriftzug: nur sichtbar, solange das 3D-Logo nicht läuft (kein WebGL, reduzierte Bewegung) */
+.hero-name-big{font-size:clamp(56px,10.5vw,156px);font-weight:600;line-height:.9;letter-spacing:-.045em;color:rgba(255,255,255,.6)}
 .hero-name-sub{font-size:15px;font-weight:400;letter-spacing:.01em;color:rgba(255,255,255,.82)}
 @keyframes nameIn{from{opacity:0}to{opacity:1}}
+/* 3D-Logo aus hero3d.js: gläserner Schriftzug, der sich mit der Maus dreht */
+.hero-canvas{position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;pointer-events:none;opacity:0;transition:opacity .9s var(--ease)}
+.hero--3d .hero-canvas{opacity:1}
+.hero--3d .hero-name{animation:none;opacity:0}
 /* Solange der grosse Name im Bild steht, bleibt das kleine Logo oben links ausgeblendet */
 .top .logo{transition:opacity .4s var(--ease),visibility .4s}
 .js .top--home:not(.scrolled) .logo{opacity:0;visibility:hidden}
 .hero-reel{
-  position:relative;z-index:1;display:inline-flex;align-items:center;gap:10px;min-height:44px;
+  position:relative;z-index:2;display:inline-flex;align-items:center;gap:10px;min-height:44px;
   margin:clamp(20px,2.4vw,32px) var(--pad);
 }
 .hero-reel:hover{opacity:.8}

@@ -106,38 +106,6 @@
     });
   }
 
-  /* ---- Name im Hero: mit der Maus verschiebbar, Doppelklick setzt ihn zurück in die Mitte ---- */
-  var heroBox=document.querySelector('.hero');
-  var nameEl=document.querySelector('.hero-name');
-  var nameHandle=document.querySelector('.hero-name-big');
-  if(heroBox&&nameEl&&nameHandle&&window.PointerEvent){
-    var dx=0,dy=0,grab=null;
-    var applyPos=function(){
-      nameEl.style.setProperty('--dx',dx+'px');
-      nameEl.style.setProperty('--dy',dy+'px');
-    };
-    nameHandle.addEventListener('pointerdown',function(e){
-      if(e.pointerType==='touch'||e.button!==0) return; /* auf dem Handy bleibt Wischen = Scrollen */
-      grab={x:e.clientX-dx,y:e.clientY-dy};
-      nameHandle.setPointerCapture(e.pointerId);
-      nameEl.classList.add('dragging');
-      e.preventDefault();
-    });
-    nameHandle.addEventListener('pointermove',function(e){
-      if(!grab) return;
-      var r=heroBox.getBoundingClientRect(), n=nameHandle.getBoundingClientRect();
-      var maxX=Math.max(0,(r.width-n.width)/2), maxY=Math.max(0,(r.height-n.height)/2-48);
-      dx=Math.min(maxX,Math.max(-maxX,e.clientX-grab.x));
-      dy=Math.min(maxY,Math.max(-maxY,e.clientY-grab.y));
-      applyPos();
-    });
-    var endGrab=function(){ grab=null; nameEl.classList.remove('dragging'); };
-    nameHandle.addEventListener('pointerup',endGrab);
-    nameHandle.addEventListener('pointercancel',endGrab);
-    nameHandle.addEventListener('dblclick',function(){ dx=0; dy=0; applyPos(); });
-    window.addEventListener('resize',function(){ dx=0; dy=0; applyPos(); });
-  }
-
   /* ---- Cookie-Zustimmung: Google-Tag lädt erst nach «Akzeptieren» ---- */
   var banner=document.getElementById('cookieBanner');
   if(banner){

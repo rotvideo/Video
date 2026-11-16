@@ -99,17 +99,18 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer;let
 #prozess + .sec{margin-top:clamp(20px,2.5vw,36px)}
 
 /* ---------- Filmwand ---------- */
-.wall{display:grid;grid-template-columns:1fr;gap:0 2px}
+.wall{display:grid;grid-template-columns:minmax(0,1fr);gap:0 2px}
 /* Laptop und Desktop: Filme als gleichmässiges Raster über die ganze Breite */
-@media (min-width:900px){.wall{grid-template-columns:repeat(2,1fr)}}
-@media (min-width:2000px){.wall{grid-template-columns:repeat(4,1fr)}}
-.film{display:flex;flex-direction:column}
+@media (min-width:900px){.wall{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:2000px){.wall{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.film{display:flex;flex-direction:column;min-width:0;max-width:100%}
 .film--wide{grid-column:1 / -1}
-.film-img{display:block;overflow:hidden;background:#101010;aspect-ratio:16 / 9}
+.film-img{display:block;position:relative;overflow:hidden;background:#101010;aspect-ratio:16 / 9;width:100%}
 .film--wide .film-img{aspect-ratio:21 / 9;min-height:240px}
-.film-img img{width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease)}
+.film-img img{position:absolute;top:0;left:0;width:100%;height:100%;max-width:none;object-fit:cover;transition:transform .9s var(--ease)}
 .film:hover .film-img img,.film:focus-visible .film-img img{transform:scale(1.025)}
-.film-cap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:0 20px;padding:12px var(--pad) 26px}
+.film-cap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:0 20px;padding:12px var(--pad) 26px;min-width:0}
+.film-cap>span{min-width:0;max-width:100%;overflow-wrap:anywhere}
 .film-cap svg{display:inline-block;margin-right:8px;vertical-align:-1px;opacity:.75}
 
 /* ---------- Leistungen und Prozess ---------- */
@@ -153,7 +154,7 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer;let
 
 /* ---------- Fusszeile ---------- */
 .foot{
-  display:grid;grid-template-columns:1fr auto 1fr;align-items:start;gap:16px 48px;
+  display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:start;gap:16px 48px;
   padding:24px var(--pad) 36px;border-top:1px solid var(--line);color:var(--dim);
 }
 .foot a,.foot button{display:inline-flex;align-items:center;min-height:44px;color:var(--dim);transition:color .25s}
@@ -161,7 +162,7 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer;let
 .foot-group{display:flex;flex-wrap:wrap;align-items:center;gap:0 28px}
 .foot-group:last-child{justify-content:flex-end}
 @media (max-width:1560px){
-  .foot{grid-template-columns:1fr;justify-items:center;text-align:center}
+  .foot{grid-template-columns:minmax(0,1fr);justify-items:center;text-align:center}
   .foot-group,.foot-group:last-child{justify-content:center}
 }
 
